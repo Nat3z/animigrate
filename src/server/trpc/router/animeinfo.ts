@@ -81,11 +81,11 @@ export const animeRouter = router({
         return false
       }
 
-      let dataFromProvider: $AnimesToUpdate[] = []
+      const dataFromProvider: $AnimesToUpdate[] = []
 
       if (input.from === "anilist") {
         for (const animeList of readData.data) {
-          let animesToBeMAL = new Map<string, $AnimesToUpdate>()
+          const animesToBeMAL = new Map<string, $AnimesToUpdate>()
 
           let query = ``
           for (const anime of animeList.entries) {
@@ -144,7 +144,7 @@ export const animeRouter = router({
         "animes": dataFromProvider
       })
 
-      let updateResult = await fetch(AniAPI + "/v1/user/update", {
+      const updateResult = await fetch(AniAPI + "/v1/user/update", {
         method: "PATCH",
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import { z } from "zod"
 
 export const AniAPI = "https://api.anisync.nat3z.com"
+// export const AniAPI = "http://127.0.0.1:8080"
 
 const TOKEN_API_RESPONSE = z.object({
   code: z.number(),
